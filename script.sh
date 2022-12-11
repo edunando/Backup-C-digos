@@ -19,50 +19,51 @@ while true;do
 	read -p "Selecione uma opção: " option
 
 	case $option in
-		"a") clear
-             read -p "Selecione o caminho do diretório:" dir;;
-		"b") clear
-             read -p "Quantas Frases você deseja gerar?" nFrases
-		     for m in $(seq 1 $nFrases);do
-			     $fortune >> frases.txt
-		     done
-		     echo "$nFrases geradas para o arquivo frases :)";;
-		"c") clear
-             for arqv in $(ls $dir);do
-			    if [ -f $arqv ];then
-				    echo $arqv
-			    fi
-		     done;;
-	    "d") clear
-             tree -d $dir;;
-		"e") clear
-             for arqv in $(ls $dir);do
-			    if [ -x $arqv ];then
-				    echo $arqv
-			    fi
-		     done;;
-	    "f") clear
-             for i in $(ls $dir);do
-	            ArqvName=$( echo $i | sed 's/^.*$/\U&/')
-	            mv $i $ArqvName
-             done;;
-        "g") clear
-             for i in $(ls $dir);do
-	            ArqvName=$( echo $i | sed 's/^.*$/\L&/')
-	            mv $i $ArqvName
-             done;;
-        "h") clear
-             for arqv in $(ls -1 $dir | grep .txt); do
-                mv $arqv $(echo $arqv | awk -F. '{print $1".docx"}');
-            done;;
-        "i") clear
-             for arqv in $(ls); do
-                cont=$(cat $arqv | wc -l)
-                if [ $cont -gt 3 ] && [ -f $arqv ];then
-                    rm $arqv
-                fi
-             done;;
-        "j") echo "Programa encerrado. Até mais!"
-             exit;;
+    
+		"a")    clear
+                read -p "Selecione o caminho do diretório:" dir;;
+		"b")    clear
+                read -p "Quantas Frases você deseja gerar?" nFrases
+		        for m in $(seq 1 $nFrases);do
+			        $fortune >> frases.txt
+		        done
+		        echo "$nFrases geradas para o arquivo frases :)";;
+		"c")    clear
+                for arqv in $(ls $dir);do
+			        if [ -f $arqv ];then
+				        echo $arqv
+			        fi
+		        done;;
+	    "d")    clear
+                tree -d $dir;;
+		"e")    clear
+                for arqv in $(ls $dir);do
+			        if [ -x $arqv ];then
+				        echo $arqv
+			        fi
+		        done;;
+	    "f")    clear
+                for i in $(ls $dir);do
+	                ArqvName=$( echo $i | sed 's/^.*$/\U&/')
+	                mv $i $ArqvName
+                done;;
+        "g")    clear
+                for i in $(ls $dir);do
+	                ArqvName=$( echo $i | sed 's/^.*$/\L&/')
+	                mv $i $ArqvName
+                done;;
+        "h")    clear
+                for arqv in $(ls -1 $dir | grep .txt); do
+                    mv $arqv $(echo $arqv | awk -F. '{print $1".docx"}');
+                done;;
+        "i")    clear
+                for arqv in $(ls); do
+                    cont=$(cat $arqv | wc -l)
+                    if [ $cont -gt 3 ] && [ -f $arqv ];then
+                        rm $arqv
+                    fi
+                done;;
+        "j")    echo "Programa encerrado. Até mais!"
+                exit;;
     esac
 done
