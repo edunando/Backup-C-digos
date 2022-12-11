@@ -7,7 +7,7 @@ while true;do
 	
 	echo "a) Selecione um diretório."
 	echo "b) Gerar N frases aleatórias"
-        echo "c) Exibir os arquivos do diretório"
+    echo "c) Exibir os arquivos do diretório"
 	echo "d) Exibir os subdiretórios deste diretório."
 	echo "e) Exibir os executáveis deste diretório."
 	echo "f) Renomear todos os arquivos deste diretório colocando todas as letras maiúsculas."
