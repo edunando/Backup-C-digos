@@ -1,6 +1,6 @@
 #!/bin/bash
 while : ; do
-    options=$(yad     --list --fixed --center --borders=10 --window-icon="./images/panda.png" --title="Nic Pandinha PDFTools" --columns=2 --no-buttons --image-on-top \
+    options=$(yad     --list --fixed --center --borders=10 --window-icon="./images/panda.png" --title="Pandinha PDFTools" --columns=2 --no-buttons --image-on-top \
     --image=./images/panda.png                             \
                         --text "O que deseja fazer?"\
                         --column "Opção" --column "Descrição"\
